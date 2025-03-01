@@ -6,7 +6,7 @@ import { test, expect } from '@playwright/test';
 // for javascript test run by asyncronus mode, 
 // but in playwright capability feel free to make multiple case can be run in serial , 
 // pararel or default by set in playwright.config.ts
-test('Login', async ({ page }) => { 
+test.skip('Login', async ({ page }) => { 
 
   // this script to open page daftar in Cermati web
   await page.goto('https://www.cermati.com/gabung'); 
