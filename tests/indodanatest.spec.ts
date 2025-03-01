@@ -45,8 +45,8 @@ test('Login Saucedemo with valid credential', async ({ page }) => {
   // this function to find element field Login Button and click that button
   await page.getByRole('button', {name:'Login'}).click();
   
-  // this function to make timeout in 2 second
-  await page.waitForTimeout(2000);
+  // this function to make timeout in 7 second
+  await page.waitForTimeout(7000);
 
   // this assertion if user valid credential will be get this URL
   await expect(page).toHaveURL('https://www.saucedemo.com/inventory.html'); 
@@ -54,4 +54,6 @@ test('Login Saucedemo with valid credential', async ({ page }) => {
   // this function to make screenshot with name 
   await page.screenshot({ path: 'successlogin_saucedemo.png' });
 
+  // this function to make timeout in 5 second
+  await page.waitForTimeout(5000);
 });
