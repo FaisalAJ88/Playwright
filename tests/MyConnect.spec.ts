@@ -25,7 +25,7 @@ test('Login Saucedemo with valid credential', async ({ page }) => {
 
 });
 
-test.skip('Login Saucedemo with valid credential', async ({ page }) => {
+test('Login Saucedemo with valid credential', async ({ page }) => {
 
   // this function to open web saucedemo.com
   await page.goto('https://www.saucedemo.com');
