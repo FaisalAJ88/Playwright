@@ -15,11 +15,16 @@ test('Login Saucedemo with valid credential', async ({ page }) => {
   // Login
   await page.fill('#user-name', 'standard_user');
   await page.fill('#password', 'secret_sauce');
-  await page.click('#login-button');
-  
+
   //take timeout
   await page.waitForTimeout(2000);
 
+  //take screenshot
+  const screenshot1 = await page.screenshot();
+  test.info().attach('login_page', { contentType: 'image/png', body: screenshot1 });
+
+  await page.click('#login-button');
+  
   // Select first product and add to cart
   await page.click('#add-to-cart-sauce-labs-backpack');
   
@@ -28,13 +33,17 @@ test('Login Saucedemo with valid credential', async ({ page }) => {
   
   //take timeout
   await page.waitForTimeout(2000);
+  const screenshot2 = await page.screenshot();
+  test.info().attach('cart_page', { contentType: 'image/png', body: screenshot2 });
 
   // Proceed to checkout
   await page.click('#checkout');
 
   //take timeout
   await page.waitForTimeout(2000);
-  
+  const screenshot3 = await page.screenshot();
+  test.info().attach('checkout_page', { contentType: 'image/png', body: screenshot3 });
+
   // Fill checkout information
   await page.fill('#first-name', 'John');
   await page.fill('#last-name', 'Doe');
@@ -43,7 +52,8 @@ test('Login Saucedemo with valid credential', async ({ page }) => {
   
   //take timeout
   await page.waitForTimeout(2000);
-
+  const screenshot4 = await page.screenshot();
+  test.info().attach('fill_checkout_page', { contentType: 'image/png', body: screenshot4 });
   // Finish checkout
   await page.click('#finish');
   
@@ -53,7 +63,8 @@ test('Login Saucedemo with valid credential', async ({ page }) => {
 
   //take timeout
   await page.waitForTimeout(2000);
-  
+  const screenshot5 = await page.screenshot();
+  test.info().attach('success_checkout_notif', { contentType: 'image/png', body: screenshot5 });
 });
 
 test.skip('Login Saucedemo with invalid username', async ({ page }) => {
