@@ -1,8 +1,7 @@
 import { test, expect } from '@playwright/test';
-import fs from 'fs';
 
 test('Attach multiple screenshots to Allure report', async ({ page }) => {
-    await page.goto('https://example.com');
+    await page.goto('https:google.com');
 
     // Take first screenshot
     const screenshot1 = await page.screenshot();
