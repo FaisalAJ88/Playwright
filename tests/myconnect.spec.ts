@@ -17,14 +17,23 @@ test('Login Saucedemo with valid credential', async ({ page }) => {
   await page.fill('#password', 'secret_sauce');
   await page.click('#login-button');
   
+  //take timeout
+  await page.waitForTimeout(2000);
+
   // Select first product and add to cart
   await page.click('#add-to-cart-sauce-labs-backpack');
   
   // Go to cart
   await page.click('.shopping_cart_link');
   
+  //take timeout
+  await page.waitForTimeout(2000);
+
   // Proceed to checkout
   await page.click('#checkout');
+
+  //take timeout
+  await page.waitForTimeout(2000);
   
   // Fill checkout information
   await page.fill('#first-name', 'John');
@@ -32,12 +41,18 @@ test('Login Saucedemo with valid credential', async ({ page }) => {
   await page.fill('#postal-code', '12345');
   await page.click('#continue');
   
+  //take timeout
+  await page.waitForTimeout(2000);
+
   // Finish checkout
   await page.click('#finish');
   
   // Verify order completion
   await page.waitForSelector('.complete-header');
   console.log('Order completed successfully!');
+
+  //take timeout
+  await page.waitForTimeout(2000);
   
 });
 
