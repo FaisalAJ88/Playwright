@@ -39,9 +39,6 @@ test('Login Saucedemo with valid credential', async ({ page }) => {
   await page.waitForSelector('.complete-header');
   console.log('Order completed successfully!');
   
-  // Close browser
-  await browser.close();
-
 });
 
 test.skip('Login Saucedemo with invalid username', async ({ page }) => {
