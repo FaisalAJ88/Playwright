@@ -18,7 +18,7 @@ test('Login Saucedemo with valid credential', async ({ page }) => {
   await page.click('#login-button');
   
   // Select first product and add to cart
-  await page.click('.inventory_item:first-of-type .btn_inventory');
+  await page.click('#add-to-cart-sauce-labs-backpack');
   
   // Go to cart
   await page.click('.shopping_cart_link');
