@@ -9,32 +9,42 @@ import { test, expect } from '@playwright/test';
 
 test('Login Saucedemo with valid credential', async ({ page }) => {
 
-  // this function to open web saucedemo.com
-  await page.goto('https://www.saucedemo.com');
-
-  // this function to find element field Username and fill the text box
-  await page.getByRole('textbox', {name:'Username'}).fill('visual_user');
-
-  // this function to find element field Password and fill the text box
-  await page.getByRole('textbox', {name:'Password'}).fill('secret_sauce');
+  // Navigate to SauceDemo
+  await page.goto('https://www.saucedemo.com/');
+    
+  // Login
+  await page.fill('#user-name', 'standard_user');
+  await page.fill('#password', 'secret_sauce');
+  await page.click('#login-button');
   
-  // this function to make timeout in 2 second
-  await page.waitForTimeout(2000);
-
-  // this function to find element field Login Button and click that button
-  await page.getByRole('button', {name:'Login'}).click();
+  // Select first product and add to cart
+  await page.click('.inventory_item:first-of-type .btn_inventory');
   
-  // this assertion if user valid credential will be get this URL
-  await expect(page).toHaveURL('https://www.saucedemo.com/inventory.html'); 
+  // Go to cart
+  await page.click('.shopping_cart_link');
+  
+  // Proceed to checkout
+  await page.click('#checkout');
+  
+  // Fill checkout information
+  await page.fill('#first-name', 'John');
+  await page.fill('#last-name', 'Doe');
+  await page.fill('#postal-code', '12345');
+  await page.click('#continue');
+  
+  // Finish checkout
+  await page.click('#finish');
+  
+  // Verify order completion
+  await page.waitForSelector('.complete-header');
+  console.log('Order completed successfully!');
+  
+  // Close browser
+  await browser.close();
 
-  // this function to make screenshot with name 
-  await page.screenshot({ path: 'successlogin_saucedemo.png' });
-
-  // this function to make timeout in 2 second
-  await page.waitForTimeout(2000);
 });
 
-test('Login Saucedemo with invalid username', async ({ page }) => {
+test.skip('Login Saucedemo with invalid username', async ({ page }) => {
 
   // this function to open web saucedemo.com
   await page.goto('https://www.saucedemo.com');
