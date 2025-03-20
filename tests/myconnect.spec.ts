@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test'; 
+import { test, expect } from './fixtures.spec'; 
 // this code is to import capability 
 // from test in playwrigt and expect to import capability to assertion 
 
