@@ -15,6 +15,9 @@ export default defineConfig({
   /**Timeout */
   timeout : 20000,
 
+  /**REPORT HTML */
+  //reporter: [['html', { open: 'never' }]],
+
   testDir: './tests',
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -25,6 +28,7 @@ export default defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
+  
   reporter: [["line"],
   [
     "allure-playwright",
