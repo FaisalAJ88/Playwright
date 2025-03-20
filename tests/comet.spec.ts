@@ -9,10 +9,10 @@ test('Login Comet Staging', async ({ page }) => {
   await page.getByRole('button', {name:'Login with O365'}).click();
 
   // this function to find element field Password and fill the text box
-  //await page.getByRole('textbox', {name:'Password'}).fill('secret_sauce');
+  await expect(page).toHaveURL('https://ftth-sit-aws-comet.xl.co.id/%23/landing');
   
   // this function to make timeout in 2 second
-  //await page.waitForTimeout(2000);
+  await page.waitForTimeout(2000);
 
   // this function to find element field Login Button and click that button
   //await page.getByRole('button', {name:'Login'}).click();
