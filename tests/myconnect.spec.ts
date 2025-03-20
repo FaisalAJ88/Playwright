@@ -8,23 +8,8 @@ import { test, expect } from './fixtures.spec';
 // pararel or default by set in playwright.config.ts
 
 test('Login Saucedemo with valid credential', async ({ page }) => {
-
-  // Navigate to SauceDemo
-  //await page.goto('https://www.saucedemo.com/');
+  // Login Capabilities descrive di fixture page
     
-  // Login
-  //await page.fill('#user-name', 'standard_user');
-  //await page.fill('#password', 'secret_sauce');
-
-  //take timeout
-  await page.waitForTimeout(2000);
-
-  //take screenshot
-  const screenshot1 = await page.screenshot();
-  test.info().attach('login_page', { contentType: 'image/png', body: screenshot1 });
-
-  //await page.click('#login-button');
-  
   // Select first product and add to cart
   await page.click('#add-to-cart-sauce-labs-backpack');
   
