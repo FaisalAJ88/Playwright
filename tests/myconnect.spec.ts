@@ -10,11 +10,11 @@ import { test, expect } from '@playwright/test';
 test('Login Saucedemo with valid credential', async ({ page }) => {
 
   // Navigate to SauceDemo
-  await page.goto('https://www.saucedemo.com/');
+  //await page.goto('https://www.saucedemo.com/');
     
   // Login
-  await page.fill('#user-name', 'standard_user');
-  await page.fill('#password', 'secret_sauce');
+  //await page.fill('#user-name', 'standard_user');
+  //await page.fill('#password', 'secret_sauce');
 
   //take timeout
   await page.waitForTimeout(2000);
@@ -23,7 +23,7 @@ test('Login Saucedemo with valid credential', async ({ page }) => {
   const screenshot1 = await page.screenshot();
   test.info().attach('login_page', { contentType: 'image/png', body: screenshot1 });
 
-  await page.click('#login-button');
+  //await page.click('#login-button');
   
   // Select first product and add to cart
   await page.click('#add-to-cart-sauce-labs-backpack');
