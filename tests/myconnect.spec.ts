@@ -8,8 +8,9 @@ import { test, expect } from './fixtures.spec';
 // pararel or default by set in playwright.config.ts
 
 test('Login Saucedemo with valid credential', async ({ page }) => {
-  // Login Capabilities descrive di fixture page
-    
+  
+  // Valid Login Capabilities describes in fixture page
+
   // Select first product and add to cart
   await page.click('#add-to-cart-sauce-labs-backpack');
   
