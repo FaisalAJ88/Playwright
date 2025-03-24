@@ -6,10 +6,10 @@ test('Login OWS Staging', async ({ page }) => {
   await page.goto('https://107d-sg-studio.teleows.com/');
 
   // this function to find element field Username and fill the text box
-  await page.fill('#username', 'JKTS-DSL-001');
+  await page.fill('#username', 'test_helpdesk_sales');
 
   // this function to find element field Password and fill the text box
-  await page.fill('#password', 'y12345!!');
+  await page.fill('#password', 'qwerty12345!!');
   
   // this function to make timeout in 2 second
   await page.waitForTimeout(2000);
@@ -18,7 +18,7 @@ test('Login OWS Staging', async ({ page }) => {
   await page.click('#loginButton');
   
   // this assertion if user invalid credential will be get some failed respone
-  await expect(page.getByText('User Basic Info')).toBeVisible();
+  await expect(page.getByText('//div[@title="test_helpdesk_sales"]')).toBeVisible();
 
   // this function to make screenshotwith name 
   //await page.screenshot({ path: 'failedlogin_username.png' });
