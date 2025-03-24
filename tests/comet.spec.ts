@@ -6,10 +6,12 @@ test('Login OWS Staging', async ({ page }) => {
   await page.goto('https://107d-sg-studio.teleows.com/');
 
   // this function to find element field Username and fill the text box
+  await page.getByPlaceholder('Enter the user account.').click();
   await page.getByPlaceholder('Enter the user account.').fill('test_helpdesk_sales');
 
   // this function to find element field Password and fill the text box
-  await page.getByPlaceholder('Enter the password.').fill('qwerty12345')
+  await page.getByPlaceholder('Enter the password.').click();
+  await page.getByPlaceholder('Enter the password.').fill('qwerty12345');
   
   // this function to make timeout in 2 second
   await page.waitForTimeout(2000);
