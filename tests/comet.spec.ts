@@ -18,6 +18,6 @@ test('Login OWS Staging', async ({ page }) => {
   await page.click('#loginButton');
   
   // this assertion if user invalid credential will be get some failed respone
-  await expect(page.getByText('//div[@title="test_helpdesk_sales"]')).toBeVisible();
+  await expect(page.locator('span[title="OWS"]')).toBeVisible();
 
 });
