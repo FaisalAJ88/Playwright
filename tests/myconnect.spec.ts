@@ -64,8 +64,10 @@ test.skip('Login Saucedemo with invalid username', async ({ page }) => {
   // this function to find element field Password and fill the text box
   await page.getByRole('textbox', {name:'Password'}).fill('secret_sauce');
   
-  // this function to make timeout in 2 second
+  // take timeout and screenshoot
   await page.waitForTimeout(2000);
+  const screenshot6 = await page.screenshot();
+  test.info().attach('success_checkout_notif', { contentType: 'image/png', body: screenshot6 });
 
   // this function to find element field Login Button and click that button
   await page.getByRole('button', {name:'Login'}).click();
@@ -73,9 +75,9 @@ test.skip('Login Saucedemo with invalid username', async ({ page }) => {
   // this assertion if user invalid credential will be get some failed respone
   await expect(page.getByText('Epic sadface: Username and password do not match any user in this service')).toBeVisible();
 
-  // this function to make screenshot with name 
-  await page.screenshot({ path: 'failedlogin_username.png' });
-
-  // this function to make timeout in 2 second
+  // take timeout and screenshoot
   await page.waitForTimeout(2000);
+  const screenshot7 = await page.screenshot();
+  test.info().attach('success_checkout_notif', { contentType: 'image/png', body: screenshot7 });
+  
 });

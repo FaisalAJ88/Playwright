@@ -20,7 +20,7 @@ test('Login OWS Staging', async ({ page }) => {
   // this assertion if user invalid credential will be get some failed respone
   await expect(page.getByText('User Basic Info')).toBeVisible();
 
-  // this function to make screenshot with name 
+  // this function to make screenshotwith name 
   //await page.screenshot({ path: 'failedlogin_username.png' });
 
   // this function to make timeout in 2 second
