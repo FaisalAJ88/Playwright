@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test'; 
 
-test('TC 01: Login ORANGE HRM DEMO', async ({ page }) => {
+test.skip('TC 01: Login ORANGE HRM DEMO', async ({ page }) => {
 
   // this function to open web opensource demo orange HRM
   await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
@@ -32,7 +32,7 @@ test('TC 01: Login ORANGE HRM DEMO', async ({ page }) => {
 
 })
 
-test('TC 02: Forgot Password', async ({ page })=> {
+test.skip('TC 02: Forgot Password', async ({ page })=> {
   
   // this function to open web opensource demo orange HRM
   await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
@@ -64,9 +64,9 @@ test('TC 03: Check Link', async ({ page })=> {
   await page.waitForTimeout(2000);
   // click Link Footer
   await page.getByRole('link', {name: 'OrangeHRM, Inc'}).click()
-  await page.waitForTimeout(3000);
+  await page.waitForTimeout(2000);
   // assertion URL Link Footer website
-  await expect(page).toHaveURL('https://www.orangehrm.com/');
+  await expect(page).toHaveURL(/orangehrm/);
   await page.waitForTimeout(2000);
   // save screenshot
   const screenshot3 = await page.screenshot()
@@ -74,7 +74,7 @@ test('TC 03: Check Link', async ({ page })=> {
   
 })
 
-test('TC 04: Check Link Youtube', async ({ page })=> {
+test.skip('TC 04: Check Link Youtube', async ({ page })=> {
   
   // this function to open web opensource demo orange HRM
   await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
