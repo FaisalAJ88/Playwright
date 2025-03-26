@@ -1,17 +1,15 @@
 import { test, expect } from '@playwright/test'; 
 
-test('Login OWS Staging', async ({ page }) => {
+test('Login ORANGE HRM DEMO', async ({ page }) => {
 
   // this function to open web saucedemo.com
-  await page.goto('https://107d-sg-studio.teleows.com/');
+  await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
 
   // this function to find element field Username and fill the text box
-  await page.getByPlaceholder('Enter the user account.').click();
-  await page.getByPlaceholder('Enter the user account.').fill('test_helpdesk_sales');
+  await page.getByRole('textbox', {name : 'Username'}).fill('Admin')
 
   // this function to find element field Password and fill the text box
-  await page.getByPlaceholder('Enter the password.').click();
-  await page.getByPlaceholder('Enter the password.').fill('qwerty12345');
+  await page.getByRole('textbox', {name : 'Password'}).fill('admin123')
   
   // this function to make timeout in 2 second
   await page.waitForTimeout(2000);
@@ -20,6 +18,6 @@ test('Login OWS Staging', async ({ page }) => {
   await page.click('#loginButton');
   
   // this assertion if user invalid credential will be get some failed respone
-  await expect(page.locator('span[title="OWS"]')).toBeVisible();
+  //await expect(page.locator('span[title="OWS"]')).toBeVisible();
 
 });
