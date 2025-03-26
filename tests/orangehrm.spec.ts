@@ -81,10 +81,10 @@ test.only('TC 04: Check Link Youtube', async ({ page })=> {
   await page.waitForTimeout(2000);
 
   // click Link Icon Youtube
-  await page.locator('[href="https://www.youtube.com/c/OrangeHRMInc"] > .oxd-icon').click()
+  await page.locator('[href="https://www.youtube.com/c/OrangeHRMInc"] > .oxd-icon').click();
   await page.waitForTimeout(3000);
   // assertion URL Link Youtube website
-  await expect(page).toHaveTitle('/OrangeHRM Inc/')
+  await expect.soft(page).toHaveTitle('Youtube');
   await page.waitForTimeout(2000);
   // save screenshot
   const screenshot4 = await page.screenshot()
