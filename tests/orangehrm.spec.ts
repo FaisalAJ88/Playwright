@@ -69,8 +69,8 @@ test('TC 03: Check Link', async ({ page })=> {
   await expect(page).toHaveURL('https://www.orangehrm.com/');
   await page.waitForTimeout(2000);
   // save screenshot
-  const screenshot2 = await page.screenshot()
-  test.info().attach('Check_Link', {contentType: 'image/png', body: screenshot2});
+  const screenshot3 = await page.screenshot()
+  test.info().attach('Check_Link', {contentType: 'image/png', body: screenshot3});
   
 })
 
@@ -87,7 +87,7 @@ test('TC 04: Check Link Youtube', async ({ page })=> {
   await expect(page).toHaveURL('https://www.youtube.com/c/OrangeHRMInc');
   await page.waitForTimeout(2000);
   // save screenshot
-  const screenshot2 = await page.screenshot()
-  test.info().attach('Check_Youtube_Link', {contentType: 'image/png', body: screenshot2});
+  const screenshot4 = await page.screenshot()
+  test.info().attach('Check_Youtube_Link', {contentType: 'image/png', body: screenshot4});
   
 })
