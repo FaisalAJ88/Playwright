@@ -30,7 +30,7 @@ test('TC 01: Login ORANGE HRM DEMO', async ({ page }) => {
   const screenshot1 = await page.screenshot()
   test.info().attach('dashboard_page', {contentType: 'image/png', body: screenshot1});
 
-});
+})
 
 test('TC 02: Forgot Password', async ({ page })=> {
   
@@ -72,6 +72,25 @@ test('TC 03: Check Link', async ({ page })=> {
 
   // save screenshot
   const screenshot2 = await page.screenshot()
-  test.info().attach('Reset_Password', {contentType: 'image/png', body: screenshot2});
+  test.info().attach('Check_Link', {contentType: 'image/png', body: screenshot2});
+  
+})
+
+test('TC 04: Check Link Youtube', async ({ page })=> {
+  
+  // this function to open web opensource demo orange HRM
+  await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
+  await page.waitForTimeout(2000);
+
+  // click Link Icon Youtube
+  await page.locator('[href="https://www.youtube.com/c/OrangeHRMInc"] > .oxd-icon').click()
+  
+  // assertion URL Link Youtube website
+  await expect(page).toHaveURL('https://www.youtube.com/c/OrangeHRMInc');
+  await page.waitForTimeout(2000);
+
+  // save screenshot
+  const screenshot2 = await page.screenshot()
+  test.info().attach('Check_Youtube_Link', {contentType: 'image/png', body: screenshot2});
   
 })
