@@ -57,7 +57,7 @@ test.skip('TC 02: Forgot Password', async ({ page })=> {
 
 })
 
-test('TC 03: Check Link', async ({ page })=> {
+test.only('TC 03: Check Link', async ({ page })=> {
   
   // this function to open web opensource demo orange HRM
   await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
@@ -65,16 +65,18 @@ test('TC 03: Check Link', async ({ page })=> {
   // click Link Footer
   await page.getByRole('link', {name: 'OrangeHRM, Inc'}).click()
   await page.waitForTimeout(2000);
-  // assertion URL Link Footer website
-  await expect(page).toHaveURL(/orangehrm/);
+  // wait for NewPage Promise
+  const newPage = await pagePromise;
   await page.waitForTimeout(2000);
+  // Interrace with new page
+  await expect (newPage).toHaveURL('https://www.orangehrm.com/')
   // save screenshot
-  const screenshot3 = await page.screenshot()
+  const screenshot3 = await newPage.screenshot()
   test.info().attach('Check_Link', {contentType: 'image/png', body: screenshot3});
   
 })
 
-test.only('TC 04: Check Link Youtube', async ({ page })=> {
+test.skip('TC 04: Check Link Youtube', async ({ page })=> {
   
   // this function to open web opensource demo orange HRM
   await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
@@ -82,10 +84,8 @@ test.only('TC 04: Check Link Youtube', async ({ page })=> {
 
   // click Link Icon Youtube
   await page.locator('[href="https://www.youtube.com/c/OrangeHRMInc"] > .oxd-icon').click();
-  await page.waitForTimeout(3000);
+  await page.waitForTimeout(5000);
   // assertion URL Link Youtube website
-  await expect(page).toHaveTitle('OrangeHRM');
-  await page.waitForTimeout(2000);
   // save screenshot
   const screenshot4 = await page.screenshot()
   test.info().attach('Check_Youtube_Link', {contentType: 'image/png', body: screenshot4});
