@@ -27,7 +27,7 @@ test('Login ORANGE HRM DEMO', async ({ page }) => {
   await page.waitForTimeout(2000);
 
   //take screenshot
-  const screenshot = await page.screenshot()
-  test.info().attach('dashboard_page', {contentType: 'image/png', body: screenshot});
+  const screenshot1 = await page.screenshot()
+  test.info().attach('dashboard_page', {contentType: 'image/png', body: screenshot1});
 
 });
