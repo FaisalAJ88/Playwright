@@ -82,9 +82,9 @@ test.only('TC 04: Check Link Youtube', async ({ page })=> {
 
   // click Link Icon Youtube
   await page.locator('[href="https://www.youtube.com/c/OrangeHRMInc"] > .oxd-icon').click()
-  await page.waitForTimeout(2000);
+  await page.waitForTimeout(3000);
   // assertion URL Link Youtube website
-  await expect(page.locator('//ytd-topbar-logo-renderer[@id="logo"]//div[@class="style-scope ytd-topbar-logo-renderer"]//div[1]')).toBeVisible()
+  await expect(page.getByText('OrangeHRM Inc')).toBeVisible()
   await page.waitForTimeout(2000);
   // save screenshot
   const screenshot4 = await page.screenshot()
