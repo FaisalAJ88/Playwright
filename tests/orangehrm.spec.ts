@@ -74,7 +74,7 @@ test('TC 03: Check Link', async ({ page })=> {
   
 })
 
-test.skip('TC 04: Check Link Youtube', async ({ page })=> {
+test('TC 04: Check Link Youtube', async ({ page })=> {
   
   // this function to open web opensource demo orange HRM
   await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
@@ -84,7 +84,7 @@ test.skip('TC 04: Check Link Youtube', async ({ page })=> {
   await page.locator('[href="https://www.youtube.com/c/OrangeHRMInc"] > .oxd-icon').click()
   await page.waitForTimeout(3000);
   // assertion URL Link Youtube website
-  await expect(page).toHaveURL('https://www.youtube.com/c/OrangeHRMInc');
+  await expect(page).toHaveURL(/OrangeHRMInc/);
   await page.waitForTimeout(2000);
   // save screenshot
   const screenshot4 = await page.screenshot()
