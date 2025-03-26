@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test'; 
 
-test('Login ORANGE HRM DEMO', async ({ page }) => {
+test('TC 01: Login ORANGE HRM DEMO', async ({ page }) => {
 
   // this function to open web opensource demo orange HRM
   await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
@@ -32,7 +32,7 @@ test('Login ORANGE HRM DEMO', async ({ page }) => {
 
 });
 
-test('Forgot Password', async ({ page })=> {
+test('TC 02: Forgot Password', async ({ page })=> {
   
   // this function to open web opensource demo orange HRM
   await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
@@ -51,8 +51,27 @@ test('Forgot Password', async ({ page })=> {
   // save screenshot
   const screenshot2 = await page.screenshot()
   test.info().attach('Reset_Password', {contentType: 'image/png', body: screenshot2});
-  
+
   // Click button Reset Password
   await page.getByRole('button', {name:'Reset Password'}).click()
 
+})
+
+test('TC 03: Check Link', async ({ page })=> {
+  
+  // this function to open web opensource demo orange HRM
+  await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
+  await page.waitForTimeout(2000);
+
+  // click Link Footer
+  await page.getByRole('link', {name: 'OrangeHRM, Inc'}).click()
+  
+  // assertion URL Link Footer website
+  await expect(page).toHaveURL('https://www.orangehrm.com/');
+  await page.waitForTimeout(2000);
+
+  // save screenshot
+  const screenshot2 = await page.screenshot()
+  test.info().attach('Reset_Password', {contentType: 'image/png', body: screenshot2});
+  
 })
