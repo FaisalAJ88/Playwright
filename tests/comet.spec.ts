@@ -14,10 +14,14 @@ test('Login ORANGE HRM DEMO', async ({ page }) => {
   // this function to make timeout in 2 second
   await page.waitForTimeout(2000);
 
+  // take screenshot
+  const screenshot = await page.screenshot()
+  test.info().attach('login_page', {contentType: 'image/png', body: screenshot});
   // this function to find element field Login Button and click that button
-  await page.click('#loginButton');
+  await page.getByRole('button', {name : 'Login'}).click()
   
   // this assertion if user invalid credential will be get some failed respone
-  //await expect(page.locator('span[title="OWS"]')).toBeVisible();
+  await expect(page.locator('.oxd-text--h6')).toBeVisible();
+  
 
 });
