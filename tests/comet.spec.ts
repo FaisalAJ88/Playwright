@@ -20,8 +20,14 @@ test('Login ORANGE HRM DEMO', async ({ page }) => {
   // this function to find element field Login Button and click that button
   await page.getByRole('button', {name : 'Login'}).click()
   
-  // this assertion if user invalid credential will be get some failed respone
+  // this assertion Text Dashboard in dashboard_page
   await expect(page.locator('.oxd-text--h6')).toBeVisible();
-  
+
+  //take timeout
+  await page.waitForTimeout(2000);
+
+  //take screenshot
+  const screenshot = await page.screenshot()
+  test.info().attach('dashboard_page', {contentType: 'image/png', body: screenshot});
 
 });
