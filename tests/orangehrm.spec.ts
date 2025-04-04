@@ -1,6 +1,6 @@
-import { test, expect } from '@playwright/test'; 
+import { test, expect, chromium } from '@playwright/test'; 
 
-test.skip('TC 01: Login ORANGE HRM DEMO', async ({ page }) => {
+test('TC 01: Login ORANGE HRM DEMO', async ({ page }) => {
 
   // this function to open web opensource demo orange HRM
   await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
@@ -32,7 +32,7 @@ test.skip('TC 01: Login ORANGE HRM DEMO', async ({ page }) => {
 
 })
 
-test.skip('TC 02: Forgot Password', async ({ page })=> {
+test('TC 02: Forgot Password', async ({ page })=> {
   
   // this function to open web opensource demo orange HRM
   await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
@@ -58,25 +58,32 @@ test.skip('TC 02: Forgot Password', async ({ page })=> {
 })
 
 test.only('TC 03: Check Link', async ({ page })=> {
+
+  const browser=await chromium.launch();
+  const context=await browser.newContext();
+
+  const page1=await context.newPage();
   
   // this function to open web opensource demo orange HRM
-  await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
-  await page.waitForTimeout(2000);
+  await page1.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
+  await page1.waitForTimeout(2000);
+
+  const pagePromise=context.waitForEvent('page')
   // click Link Footer
   await page.getByRole('link', {name: 'OrangeHRM, Inc'}).click()
   await page.waitForTimeout(2000);
-  // wait for NewPage Promise
-  const newPage = await pagePromise;
-  await page.waitForTimeout(2000);
-  // Interrace with new page
+  
+  const newPage=await pagePromise;
+
   await expect (newPage).toHaveURL('https://www.orangehrm.com/')
+
   // save screenshot
-  const screenshot3 = await newPage.screenshot()
+  const screenshot3 = await page.screenshot()
   test.info().attach('Check_Link', {contentType: 'image/png', body: screenshot3});
   
 })
 
-test.skip('TC 04: Check Link Youtube', async ({ page })=> {
+test('TC 04: Check Link Youtube', async ({ page })=> {
   
   // this function to open web opensource demo orange HRM
   await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
