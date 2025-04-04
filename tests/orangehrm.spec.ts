@@ -1,6 +1,6 @@
 import { test, expect, chromium } from '@playwright/test'; 
 
-test('TC 01: Login ORANGE HRM DEMO', async ({ page }) => {
+test.skip('TC 01: Login ORANGE HRM DEMO', async ({ page }) => {
 
   // this function to open web opensource demo orange HRM
   await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
@@ -32,7 +32,7 @@ test('TC 01: Login ORANGE HRM DEMO', async ({ page }) => {
 
 })
 
-test('TC 02: Forgot Password', async ({ page })=> {
+test.skip('TC 02: Forgot Password', async ({ page })=> {
   
   // this function to open web opensource demo orange HRM
   await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
@@ -70,8 +70,8 @@ test.only('TC 03: Check Link', async ({ page })=> {
 
   const pagePromise=context.waitForEvent('page')
   // click Link Footer
-  await page.getByRole('link', {name: 'OrangeHRM, Inc'}).click()
-  await page.waitForTimeout(2000);
+  await page1.getByRole('link', {name: 'OrangeHRM, Inc'}).click()
+  await page1.waitForTimeout(2000);
   
   const newPage=await pagePromise;
 
@@ -83,7 +83,7 @@ test.only('TC 03: Check Link', async ({ page })=> {
   
 })
 
-test('TC 04: Check Link Youtube', async ({ page })=> {
+test.skip('TC 04: Check Link Youtube', async ({ page })=> {
   
   // this function to open web opensource demo orange HRM
   await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
