@@ -77,9 +77,9 @@ test.only('TC 03: Check Link', async ({ page })=> {
 
   await expect (newPage).toHaveURL('https://www.orangehrm.com/')
   await newPage.waitForTimeout(2000);
-  
+
   // save screenshot
-  const screenshot3 = await page.screenshot()
+  const screenshot3 = await newPage.screenshot()
   test.info().attach('Check_Link', {contentType: 'image/png', body: screenshot3});
   
 })
