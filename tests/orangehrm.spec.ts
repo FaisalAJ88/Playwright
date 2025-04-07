@@ -1,4 +1,4 @@
-import { test, expect, chromium } from '@playwright/test'; 
+import { test, expect, chromium, firefox, webkit } from '@playwright/test'; 
 
 test.skip('TC 01: Login ORANGE HRM DEMO', async ({ page }) => {
 
@@ -58,21 +58,27 @@ test.skip('TC 02: Forgot Password', async ({ page })=> {
 })
 
 test.only('TC 03: Check Link', async ({ page })=> {
+  //this script to create variable browser 
+  const browser=await webkit.launch();
 
-  const browser=await chromium.launch();
+  //this script to create variable context 
   const context=await browser.newContext();
 
+  //this script to create variable page1 that can become initial for newpage/new windows of browser
   const page1=await context.newPage();
   
   // this function to open web opensource demo orange HRM
   await page1.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
   await page1.waitForTimeout(2000);
 
+  //this script to create variable pagepromise to waiting page per page 
   const pagePromise=context.waitForEvent('page')
+
   // click Link Footer
   await page1.getByRole('link', {name: 'OrangeHRM, Inc'}).click()
   await page1.waitForTimeout(2000);
-  
+
+  //this script to create variable newPage 
   const newPage=await pagePromise;
 
   await expect (newPage).toHaveURL('https://www.orangehrm.com/')
