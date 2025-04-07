@@ -81,6 +81,7 @@ test.only('TC 03: Check Link', async ({ page })=> {
   //this script to create variable newPage 
   const newPage=await pagePromise;
 
+  // assertion URL Link Youtube website
   await expect (newPage).toHaveURL('https://www.orangehrm.com/')
   await newPage.waitForTimeout(2000);
 
@@ -90,18 +91,37 @@ test.only('TC 03: Check Link', async ({ page })=> {
   
 })
 
-test.skip('TC 04: Check Link Youtube', async ({ page })=> {
+test.only('TC 04: Check Link Youtube', async ({ page })=> {
+  
+  //this script to create variable browser 
+  const browser=await webkit.launch();
+
+  //this script to create variable context 
+  const context=await browser.newContext();
+
+  //this script to create variable page1 that can become initial for newpage/new windows of browser
+  const page1=await context.newPage();
   
   // this function to open web opensource demo orange HRM
-  await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
-  await page.waitForTimeout(2000);
+  await page1.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
+  await page1.waitForTimeout(2000);
+
+  //this script to create variable pagepromise to waiting page per page 
+  const pagePromise=context.waitForEvent('page')
 
   // click Link Icon Youtube
-  await page.locator('[href="https://www.youtube.com/c/OrangeHRMInc"] > .oxd-icon').click();
-  await page.waitForTimeout(5000);
+  await page1.locator('[href="https://www.youtube.com/c/OrangeHRMInc"] > .oxd-icon').click();
+  await page1.waitForTimeout(2000);
+
+  //this script to create variable newPage 
+  const newPage2=await pagePromise;
+
   // assertion URL Link Youtube website
+  await expect (newPage2).toHaveURL('https://www.youtube.com/c/OrangeHRMInc')
+  await newPage2.waitForTimeout(2000);
+
   // save screenshot
-  const screenshot4 = await page.screenshot()
+  const screenshot4 = await newPage2.screenshot()
   test.info().attach('Check_Youtube_Link', {contentType: 'image/png', body: screenshot4});
   
 })
