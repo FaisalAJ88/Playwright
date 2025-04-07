@@ -1,6 +1,6 @@
 import { test, expect, chromium, firefox, webkit } from '@playwright/test'; 
 
-test.skip('TC 01: Login ORANGE HRM DEMO', async ({ page }) => {
+test('TC 01: Login ORANGE HRM DEMO', async ({ page }) => {
 
   // this function to open web opensource demo orange HRM
   await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
@@ -32,7 +32,7 @@ test.skip('TC 01: Login ORANGE HRM DEMO', async ({ page }) => {
 
 })
 
-test.skip('TC 02: Forgot Password', async ({ page })=> {
+test('TC 02: Forgot Password', async ({ page })=> {
   
   // this function to open web opensource demo orange HRM
   await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
@@ -57,7 +57,7 @@ test.skip('TC 02: Forgot Password', async ({ page })=> {
 
 })
 
-test.only('TC 03: Check Link', async ({ page })=> {
+test('TC 03: Check Link', async ({ page })=> {
   //this script to create variable browser 
   const browser=await webkit.launch();
 
@@ -91,7 +91,7 @@ test.only('TC 03: Check Link', async ({ page })=> {
   
 })
 
-test.only('TC 04: Check Link Youtube', async ({ page })=> {
+test('TC 04: Check Link Youtube', async ({ page })=> {
   
   //this script to create variable browser 
   const browser=await webkit.launch();
