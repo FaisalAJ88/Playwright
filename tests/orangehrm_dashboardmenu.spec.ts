@@ -1,3 +1,5 @@
+import { test, expect, chromium, firefox, webkit } from '@playwright/test';
+
 test('TC 01: Dashboard_Check_Menu_Admin', async ({ page }) => {
 
   // this function to open web opensource demo orange HRM
@@ -32,7 +34,11 @@ test('TC 01: Dashboard_Check_Menu_Admin', async ({ page }) => {
   //take timeout
   await page.waitForTimeout(2000);
 
-  //take screenshot Dashboard
+  // this assertion URL Menu Admin
+  await expect (page).toHaveURL('https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers')
+  await page.waitForTimeout(2000);
+
+  //take screenshot Menu Admin
   const screenshot2 = await page.screenshot()
   test.info().attach('Menu_Admin', {contentType: 'image/png', body: screenshot2});
 
