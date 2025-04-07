@@ -74,16 +74,16 @@ test.skip('TC 02: Dashboard_Check_Menu_PIM', async ({ page }) => {
   const screenshot4 = await page.screenshot()
   test.info().attach('Dashboard_Page', {contentType: 'image/png', body: screenshot4});
 
-  // this function to find element field Menu Admin
+  // this function to find element field Menu PIM
   await page.getByRole('link', {name : 'PIM'}).click()
   //take timeout
   await page.waitForTimeout(2000);
 
-  // this assertion URL Menu Admin
+  // this assertion URL Menu PIM
   await expect (page).toHaveURL('https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewEmployeeList')
   await page.waitForTimeout(2000);
 
-  //take screenshot Menu Admin
+  //take screenshot Menu PIM
   const screenshot5 = await page.screenshot()
   test.info().attach('Menu_PIM Page', {contentType: 'image/png', body: screenshot5 });
 
@@ -119,7 +119,7 @@ test.skip('TC 03: Dashboard_Check_Menu_Leave', async ({ page }) => {
   const screenshot7 = await page.screenshot()
   test.info().attach('Dashboard_Page', {contentType: 'image/png', body: screenshot7 });
 
-  // this function to find element field Menu Admin
+  // this function to find element field Menu Leave
   await page.getByRole('link', {name : 'Leave'}).click()
   //take timeout
   await page.waitForTimeout(2000);
@@ -128,13 +128,13 @@ test.skip('TC 03: Dashboard_Check_Menu_Leave', async ({ page }) => {
   await expect (page).toHaveURL('https://opensource-demo.orangehrmlive.com/web/index.php/leave/viewLeaveList')
   await page.waitForTimeout(2000);
 
-  //take screenshot Menu Admin
+  //take screenshot Menu Leave
   const screenshot8 = await page.screenshot()
   test.info().attach('Menu_Leave Page', {contentType: 'image/png', body: screenshot8 });
 
 })
 
-test.only('TC 04: Dashboard_Check_Menu_Time', async ({ page }) => {
+test.skip('TC 04: Dashboard_Check_Menu_Time', async ({ page }) => {
 
   // this function to open web opensource demo orange HRM
   await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
@@ -164,17 +164,62 @@ test.only('TC 04: Dashboard_Check_Menu_Time', async ({ page }) => {
   const screenshot10 = await page.screenshot()
   test.info().attach('Dashboard_Page', {contentType: 'image/png', body: screenshot10 });
 
-  // this function to find element field Menu Admin
+  // this function to find element field Menu Time
   await page.getByRole('link', {name : 'Time'}).click()
   //take timeout
   await page.waitForTimeout(2000);
 
-  // this assertion URL Menu Leave
+  // this assertion URL Menu Time
   await expect (page).toHaveURL('https://opensource-demo.orangehrmlive.com/web/index.php/time/viewEmployeeTimesheet')
   await page.waitForTimeout(2000);
 
-  //take screenshot Menu Admin
+  //take screenshot Menu Time
   const screenshot11 = await page.screenshot()
   test.info().attach('Menu_Time Page', {contentType: 'image/png', body: screenshot11 });
+
+})
+
+test.only('TC 05: Dashboard_Check_Menu_Time', async ({ page }) => {
+
+  // this function to open web opensource demo orange HRM
+  await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
+
+  // this function to find element field Username and fill the text box
+  await page.getByRole('textbox', {name : 'Username'}).fill('Admin')
+
+  // this function to find element field Password and fill the text box
+  await page.getByRole('textbox', {name : 'Password'}).fill('admin123')
+  
+  // this function to make timeout in 2 second
+  await page.waitForTimeout(2000);
+
+  // take screenshot
+  const screenshot12 = await page.screenshot()
+  test.info().attach('login_page', {contentType: 'image/png', body: screenshot12 });
+
+  // this function to find element field Login Button and click that button
+  await page.getByRole('button', {name : 'Login'}).click()
+  
+  // this assertion Text Dashboard in dashboard_page
+  await expect(page.locator('.oxd-text--h6')).toBeVisible();
+  //take timeout
+  await page.waitForTimeout(2000);
+
+  //take screenshot Dashboard_Menu
+  const screenshot13 = await page.screenshot()
+  test.info().attach('Dashboard_Page', {contentType: 'image/png', body: screenshot13 });
+
+  // this function to find element field Menu Time
+  await page.getByRole('link', {name : 'Recruitment'}).click()
+  //take timeout
+  await page.waitForTimeout(2000);
+
+  // this assertion URL Menu Time
+  await expect (page).toHaveURL('https://opensource-demo.orangehrmlive.com/web/index.php/recruitment/viewCandidates')
+  await page.waitForTimeout(2000);
+
+  //take screenshot Menu Time
+  const screenshot14 = await page.screenshot()
+  test.info().attach('Menu_Time Page', {contentType: 'image/png', body: screenshot14 });
 
 })
