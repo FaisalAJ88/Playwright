@@ -61,6 +61,7 @@ test.only('TC 02: Dashboard_Check_Menu_PIM', async ({ page }) => {
   // take screenshot
   const screenshot = await page.screenshot()
   test.info().attach('login_page', {contentType: 'image/png', body: screenshot});
+  
   // this function to find element field Login Button and click that button
   await page.getByRole('button', {name : 'Login'}).click()
   
