@@ -25,14 +25,14 @@ test('TC 01: Dashboard_Check_Menu_Admin', async ({ page }) => {
   //take timeout
   await page.waitForTimeout(2000);
 
-  //take screenshot Dashboard
-  const screenshot1 = await page.screenshot()
-  test.info().attach('dashboard_page', {contentType: 'image/png', body: screenshot1});
-
   // this function to find element field Menu Admin
   await page.getByRole('link', {name : 'Admin'}).click()
   //take timeout
   await page.waitForTimeout(2000);
+
+  //take screenshot Dashboard_Menu Admin
+  const screenshot1 = await page.screenshot()
+  test.info().attach('Click_Menu Admin', {contentType: 'image/png', body: screenshot1});
 
   // this assertion URL Menu Admin
   await expect (page).toHaveURL('https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers')
@@ -40,6 +40,6 @@ test('TC 01: Dashboard_Check_Menu_Admin', async ({ page }) => {
 
   //take screenshot Menu Admin
   const screenshot2 = await page.screenshot()
-  test.info().attach('Menu_Admin', {contentType: 'image/png', body: screenshot2});
+  test.info().attach('Menu_Admin Page', {contentType: 'image/png', body: screenshot2});
 
 })
