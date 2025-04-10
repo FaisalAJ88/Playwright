@@ -33,8 +33,17 @@ test.describe('OrangeHRM Login - CSV Data Driven Tests', () => {
 
       if (data.username === 'Admin' && data.password === 'admin123') {
         await expect(page.locator('h6')).toHaveText('Dashboard');
+        //take timeout
+        await page.waitForTimeout(2000);
+        const screenshot1 = await page.screenshot();
+        test.info().attach('Valid Login', { contentType: 'image/png', body: screenshot1 });
+
       } else {
         await expect(page.locator('.oxd-alert-content-text')).toContainText('Invalid credentials');
+        //take timeout
+        await page.waitForTimeout(2000);
+        const screenshot2 = await page.screenshot();
+        test.info().attach('Invalid Login', { contentType: 'image/png', body: screenshot2 });
       }
     });
   }
