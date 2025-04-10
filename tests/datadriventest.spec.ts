@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import testData from './testData.json';
 
-test.describe('OrangeHRM Login Tests - Data Driven', () => {
+test.describe('OrangeHRM Login Tests - Data Driven with JSON file', () => {
   for (const data of testData) {
     test(`Login Test with username: ${data.username}`, async ({ page }) => {
       await page.goto('https://opensource-demo.orangehrmlive.com/');
