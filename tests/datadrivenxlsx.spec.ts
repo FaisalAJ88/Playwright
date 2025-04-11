@@ -1,7 +1,6 @@
 import { test, expect } from '@playwright/test';
-import * as fs from 'fs';
+import * as XLSX from 'xlsx';
 import * as path from 'path';
-import { readFile, utils, read as _read } from 'XLSX';
 
 // Read data from the Excel file
 function getLoginData(): { username: string; password: string }[] {
