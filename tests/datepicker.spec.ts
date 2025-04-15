@@ -26,7 +26,7 @@ test('TC 01: Handle Datepicker', async ({ page }) => {
         break;
     }
 
-    //await page.$$('//a[@class=ui-state-default')
+  // await page.$$('//a[@class=ui-state-default')
   // this function to make timeout in 2 second
   await page.waitForTimeout(2000);
 
