@@ -59,7 +59,7 @@ test('TC 02: Forgot Password', async ({ page })=> {
 
 test('TC 03: Check Link', async ({ page })=> {
   //this script to create variable browser 
-  const browser=await webkit.launch();
+  const browser=await chromium.launch();
 
   //this script to create variable context 
   const context=await browser.newContext();
@@ -94,7 +94,7 @@ test('TC 03: Check Link', async ({ page })=> {
 test('TC 04: Check Link Youtube', async ({ page })=> {
   
   //this script to create variable browser 
-  const browser=await webkit.launch();
+  const browser=await chromium.launch();
 
   //this script to create variable context 
   const context=await browser.newContext();
