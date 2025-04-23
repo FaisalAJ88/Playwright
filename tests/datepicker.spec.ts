@@ -1,38 +1,43 @@
-import { test, expect, chromium, firefox, webkit } from '@playwright/test'; 
+import { test, expect, chromium, firefox, webkit } from '@playwright/test';
 
 test('TC 01: Handle Datepicker', async ({ page }) => {
-
-  // this function to open web opensource demo orange HRM
+  // Navigate to the test site
   await page.goto('https://testautomationpractice.blogspot.com');
   await page.waitForTimeout(2000);
+
+  // Scroll down to the date picker
   await page.keyboard.press('PageDown');
   await page.waitForTimeout(2000);
   await page.keyboard.press('PageDown');
-  // this function to find element field Username and fill the text box
-  await page.fill('#datepicker','03/15/2024')
-  
-  //date picker
-  const year ="2024"
-  const month ="March"
-  const date = "20"
 
-  while(true)
-  {
-    const currentYear =await page.locator('.ui-datepicker-year').textContent()
-    const currentMonth=await page.locator('.ui-datepicker-month').textContent()
-  
-    if(currentYear == year && currentMonth == month)
-    {
-        break;
+  // Click the datepicker input to open the date picker
+  await page.click('#datepicker');
+
+  const targetYear = '2024';
+  const targetMonth = 'March';
+  const targetDay = '20';
+
+  // Loop until the correct month and year are visible
+  while (true) {
+    const currentYear = await page.locator('.ui-datepicker-year').textContent();
+    const currentMonth = await page.locator('.ui-datepicker-month').textContent();
+
+    if (currentYear === targetYear && currentMonth === targetMonth) {
+      break;
     }
 
-  // await page.$$('//a[@class=ui-state-default')
-  // this function to make timeout in 2 second
-  await page.waitForTimeout(2000);
-
-  // take screenshot
-  const screenshot = await page.screenshot()
-  test.info().attach('login_page', {contentType: 'image/png', body: screenshot});
+    // Click next to navigate to the next month
+    await page.click('.ui-datepicker-next');
+    await page.waitForTimeout(500);
   }
 
-})
+  // Click the specific day
+  await page.click(`//a[text()='${targetDay}']`);
+
+  // Take a screenshot for debugging
+  const screenshot = await page.screenshot();
+  test.info().attach('datepicker_selection', {
+    contentType: 'image/png',
+    body: screenshot
+  });
+});
