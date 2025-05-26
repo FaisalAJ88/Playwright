@@ -10,11 +10,24 @@ test('test', async ({ page }) => {
   await page.locator('#prevMonthBtn').click();
   }
 
+    //take screenshot
+    const screenshot1 = await page.screenshot();
+    test.info().attach('login_page', { contentType: 'image/png', body: screenshot1 });
+
   // Select specific date
   await page.locator('.calendar-day:has-text("15")').click();
   await page.waitForTimeout(5000);
 
+  //take screenshot
+    const screenshot2 = await page.screenshot();
+    test.info().attach('login_page', { contentType: 'image/png', body: screenshot2 });
+
   // Verify date selection.
   const selectedDate = await page.locator('#customDateInput').inputValue();
   expect(selectedDate).toContain('3/15/2025');
+
+  //take screenshot
+    const screenshot3 = await page.screenshot();
+    test.info().attach('login_page', { contentType: 'image/png', body: screenshot3 });
+
 });
