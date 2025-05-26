@@ -9,9 +9,17 @@ test('test', async ({ page }) => {
   while (await page.getByRole('spinbutton', { name: 'Year' }).inputValue() !== '2027') {
     await page.locator('.arrowUp').click();
     await page.waitForTimeout(1000);
+
+    //take screenshot
+    const screenshot1 = await page.screenshot();
+    test.info().attach('login_page', { contentType: 'image/png', body: screenshot1 });
   }
   //Select specific month
   await page.getByLabel('Month').selectOption('September');
   await page.waitForTimeout(1000);
+
+  //take screenshot
+    const screenshot2 = await page.screenshot();
+    test.info().attach('login_page', { contentType: 'image/png', body: screenshot2 });
 
 })
