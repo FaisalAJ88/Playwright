@@ -14,4 +14,4 @@ test('test', async ({ page }) => {
   await page.getByLabel('Month').selectOption('September');
   await page.waitForTimeout(1000);
 
-  //Select specific date
+})
