@@ -1,0 +1,13 @@
+2025-05-26 17:07:33 - [32minfo[39m: Log Directory has been set to D:\Playwright\Playwright\log
+2025-05-26 17:07:33 - [32minfo[39m: Running SDK with args C:\Program Files\nodejs\node.exe D:\Playwright\Playwright\node_modules\browserstack-node-sdk\src\bin\runner.js playwright test ./tests/customedatepicker.spec.ts
+2025-05-26 17:07:33 - [32minfo[39m: SDK run started with id: 5dfc5b07-455d-48d0-a6be-941153345041
+2025-05-26 17:07:33 - [32minfo[39m: Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+2025-05-26 17:07:44 - [32minfo[39m: Local binary started successfully
+2025-05-26 17:07:47 - [31merror[39m: ACCESSIBILITY Build creation failed
+2025-05-26 17:07:47 - [32minfo[39m: Testhub started with id: 72bfcnfk52nbp3gezqkg7p5ggkdbzljcrzrrgzds
+2025-05-26 17:08:57 - [32minfo[39m: Visit https://observability.browserstack.com/builds/72bfcnfk52nbp3gezqkg7p5ggkdbzljcrzrrgzds to view build report, insights, and many more debugging information all at one place!
+
+2025-05-26 17:08:58 - [32minfo[39m: View build on BrowserStack dashboard: https://automate.browserstack.com/dashboard/v2/builds/0cfe5a0e06b2ccee77c4387a4e39b90ea7184849
+2025-05-26 17:08:58 - [32minfo[39m: SDK run ended for id: 5dfc5b07-455d-48d0-a6be-941153345041, testhub id: 72bfcnfk52nbp3gezqkg7p5ggkdbzljcrzrrgzds
+2025-05-26 17:09:01 - [32minfo[39m: Deleting D:\Playwright\Playwright\playwright-browserstack-sdk.config.ts
+2025-05-26 17:09:04 - [32minfo[39m: Local binary stopped
