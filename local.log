@@ -1,13 +1,13 @@
 "" 
 
-Mon May 26 2025 17:07:41:281 GMT+0700 (SE Asia Standard Time) -- Binary semantic version is v8.9.15
-Mon May 26 2025 17:07:41:281 GMT+0700 (SE Asia Standard Time) -- Setting output as extra verbose with request parsing
-Mon May 26 2025 17:07:44:206 GMT+0700 (SE Asia Standard Time) -- Starting configuration console on http://localhost:45454
-Mon May 26 2025 17:07:44:378 GMT+0700 (SE Asia Standard Time) -- [SUCCESS] You can now access your local server(s) in our remote browser
+Mon May 26 2025 17:23:50:892 GMT+0700 (SE Asia Standard Time) -- Binary semantic version is v8.9.15
+Mon May 26 2025 17:23:50:892 GMT+0700 (SE Asia Standard Time) -- Setting output as extra verbose with request parsing
+Mon May 26 2025 17:23:53:260 GMT+0700 (SE Asia Standard Time) -- [SUCCESS] You can now access your local server(s) in our remote browser
 
-Mon May 26 2025 17:07:44:871 GMT+0700 (SE Asia Standard Time) -- Connecting to BrowserStack using WebSocket protocol...
-Mon May 26 2025 17:07:44:871 GMT+0700 (SE Asia Standard Time) -- Platform supports WebSocket connections.
+Mon May 26 2025 17:23:53:984 GMT+0700 (SE Asia Standard Time) -- Starting configuration console on http://localhost:45454
+Mon May 26 2025 17:23:54:14 GMT+0700 (SE Asia Standard Time) -- Connecting to BrowserStack using WebSocket protocol...
+Mon May 26 2025 17:23:54:14 GMT+0700 (SE Asia Standard Time) -- Platform supports WebSocket connections.
 
-Mon May 26 2025 17:07:44:971 GMT+0700 (SE Asia Standard Time) -- Press Ctrl-C to exit
+Mon May 26 2025 17:23:54:133 GMT+0700 (SE Asia Standard Time) -- Press Ctrl-C to exit
 
 

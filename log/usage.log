@@ -11,3 +11,16 @@
 2025-05-26 17:08:58 - [32minfo[39m: SDK run ended for id: 5dfc5b07-455d-48d0-a6be-941153345041, testhub id: 72bfcnfk52nbp3gezqkg7p5ggkdbzljcrzrrgzds
 2025-05-26 17:09:01 - [32minfo[39m: Deleting D:\Playwright\Playwright\playwright-browserstack-sdk.config.ts
 2025-05-26 17:09:04 - [32minfo[39m: Local binary stopped
+2025-05-26 17:23:48 - [32minfo[39m: Log Directory has been set to D:\Playwright\Playwright\log
+2025-05-26 17:23:48 - [32minfo[39m: Running SDK with args C:\Program Files\nodejs\node.exe D:\Playwright\Playwright\node_modules\browserstack-node-sdk\src\bin\runner.js playwright test ./tests/orangehrm.spec.ts
+2025-05-26 17:23:48 - [32minfo[39m: SDK run started with id: 795d5ba6-b90f-4269-9fc2-5c9f9470d76b
+2025-05-26 17:23:48 - [32minfo[39m: Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+2025-05-26 17:23:53 - [32minfo[39m: Local binary started successfully
+2025-05-26 17:23:56 - [31merror[39m: ACCESSIBILITY Build creation failed
+2025-05-26 17:23:56 - [32minfo[39m: Testhub started with id: lizw1wqtw5ggu11wygl2qv6bko17rpaykecbibrh
+2025-05-26 17:26:29 - [32minfo[39m: Visit https://observability.browserstack.com/builds/lizw1wqtw5ggu11wygl2qv6bko17rpaykecbibrh to view build report, insights, and many more debugging information all at one place!
+
+2025-05-26 17:26:29 - [32minfo[39m: View build on BrowserStack dashboard: https://automate.browserstack.com/dashboard/v2/builds/9445d28db9bb5a8b97dae0293c38ad7c684f021b
+2025-05-26 17:26:30 - [32minfo[39m: SDK run ended for id: 795d5ba6-b90f-4269-9fc2-5c9f9470d76b, testhub id: lizw1wqtw5ggu11wygl2qv6bko17rpaykecbibrh
+2025-05-26 17:26:32 - [32minfo[39m: Deleting D:\Playwright\Playwright\playwright-browserstack-sdk.config.ts
+2025-05-26 17:26:37 - [32minfo[39m: Local binary stopped
