@@ -7,7 +7,7 @@ import { test, expect } from './fixtures.spec';
 // but in playwright capability feel free to make multiple case can be run in serial , 
 // pararel or default by set in playwright.config.ts
 
-test('Login Saucedemo with valid credential', async ({ page }) => {
+test('Valid Login - Checkout', async ({ page }) => {
   
   // Valid Login Capabilities describes in fixture page
 
