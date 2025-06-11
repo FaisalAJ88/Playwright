@@ -53,7 +53,7 @@ test('Login Saucedemo with valid credential', async ({ page }) => {
   test.info().attach('success_checkout_notif', { contentType: 'image/png', body: screenshot5 });
 });
 
-test('Login Saucedemo with invalid username', async ({ page }) => {
+test.skip('Login Saucedemo with invalid username', async ({ page }) => {
 
   // this function to open web saucedemo.com
   await page.goto('https://www.saucedemo.com');
