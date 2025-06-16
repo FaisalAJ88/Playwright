@@ -8,7 +8,8 @@ import path from 'path';
  */
 
 // Read from ".env" file.
-dotenv.config({ path: path.resolve(__dirname, '.env') });
+dotenv.config({ 
+  path: './tests/.env'});
 
 require('dotenv').config()
 console.log(process.env) // remove this after you've confirmed it is working
