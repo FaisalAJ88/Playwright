@@ -3,13 +3,13 @@ import dotenv from 'dotenv';
 import path from 'path';
 
 // Read from ".env" file.
-dotenv.config({ path: path.resolve(__dirname, '.env.local') });
+dotenv.config({ path: path.resolve('./tests/env', '.env') });
 
 const baseURL = process.env.baseURL as string;
 const username = process.env.username as string;
 const password = process.env.password as string;
 
-test('Google login', async ({ page }) => {
+test('Orange HRM login', async ({ page }) => {
   await page.goto(baseURL);
 
   await page.getByRole('textbox', {name : 'Username'}).fill(username)
