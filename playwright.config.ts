@@ -8,9 +8,8 @@ import path from 'path';
  */
 
 // Read from ".env" file.
-dotenv.config({ 
-  path: './tests/.env'});
-  
+dotenv.config({ path: path.resolve(__dirname, '..', '.env') });
+
 
 /**
  * See https://playwright.dev/docs/test-configuration.

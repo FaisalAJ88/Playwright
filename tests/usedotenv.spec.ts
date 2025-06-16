@@ -16,7 +16,7 @@ test('Orange HRM login', async ({ page }) => {
   await page.getByRole('button', {name : 'Login'}).click()
     
     // this assertion Text Dashboard in dashboard_page
-    //await expect(page.locator('.oxd-text--h6')).toBeVisible();
+    await expect(page.locator('.oxd-text--h6')).toBeVisible();
   
     //take timeout
     //await page.waitForTimeout(2000);
