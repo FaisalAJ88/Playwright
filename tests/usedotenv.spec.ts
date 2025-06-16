@@ -21,7 +21,7 @@ test('Orange HRM login', async ({ page }) => {
     
     // this assertion Text Dashboard in dashboard_page
     await expect(page.locator('.app_logo')).toBeVisible();
-   
+  
     //take timeout
     await page.waitForTimeout(1000);
 
