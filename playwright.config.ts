@@ -1,7 +1,7 @@
 import { defineConfig, devices } from '@playwright/test';
 
 import dotenv from 'dotenv';
-require('dotenv').config({ override: true, debug: true })
+//require('dotenv').config({ override: true, debug: true })
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
