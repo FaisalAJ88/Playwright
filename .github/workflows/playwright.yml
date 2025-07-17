@@ -24,11 +24,6 @@ jobs:
         npm ci
         npx playwright install --with-deps
 
-    - name: Clean previous test results
-      run: |
-        rm -rf playwright-report
-        rm -rf test-results
-
     - name: Run Playwright tests
       run: npx playwright test
 
