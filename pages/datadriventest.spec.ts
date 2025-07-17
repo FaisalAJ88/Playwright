@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import testData from './testData.json';
+import testData from '../tests/testData.json';
 
 test.describe('OrangeHRM Login Tests - Data Driven with JSON file', () => {
   for (const data of testData) {
